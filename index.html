@@ -36,58 +36,19 @@
   }
   .logo span { color: #1e6fff; }
 
-  .nav-links {
-    display: flex;
-    gap: 24px;
-    font-size: 15px;
-    font-weight: 600;
-  }
-  .nav-links a {
-    color: #0a0f1c;
-    text-decoration: none;
-    transition: color 0.2s;
-    position: relative;
-  }
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; left: 0;
-    width: 0; height: 2px;
-    background: #1e6fff;
-    transition: width 0.25s;
-  }
-  .nav-links a:hover { color: #1e6fff; }
-  .nav-links a:hover::after { width: 100%; }
-
-  .header-buttons { display: flex; gap: 10px; }
-
-  .btn-login, .btn-register {
-    padding: 10px 22px;
-    border-radius: 8px;
+  .header-btn {
+    padding: 11px 26px;
+    border-radius: 10px;
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
     transition: 0.2s;
-  }
-
-  .btn-login {
-    background: transparent;
-    color: #1e6fff;
-    border: 2px solid #1e6fff;
-  }
-  .btn-login:hover {
-    background: #1e6fff;
-    color: #fff;
-    transform: translateY(-1px);
-  }
-
-  .btn-register {
     background: #1e6fff;
     color: #ffffff;
     border: 2px solid #1e6fff;
     box-shadow: 0 6px 16px rgba(30,111,255,0.28);
   }
-  .btn-register:hover {
+  .header-btn:hover {
     background: #0a4fd6;
     border-color: #0a4fd6;
     transform: translateY(-1px);
@@ -102,7 +63,6 @@
       radial-gradient(circle at 20% 0%, rgba(30,111,255,0.10) 0%, transparent 45%),
       radial-gradient(circle at 85% 20%, rgba(30,111,255,0.08) 0%, transparent 40%),
       linear-gradient(180deg, #f5f9ff 0%, #ffffff 100%);
-    position: relative;
   }
 
   .top-pill {
@@ -161,17 +121,38 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+    max-width: 420px;
+    margin: 0 auto;
   }
-  .hero-buttons button {
-    padding: 17px 48px;
+
+  .btn-outline {
+    flex: 1;
+    min-width: 180px;
+    padding: 17px 36px;
     font-size: 16px;
     font-weight: 800;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     transition: 0.25s;
+    background: transparent;
+    color: #1e6fff;
+    border: 2px solid #1e6fff;
+  }
+  .btn-outline:hover {
+    background: #1e6fff;
+    color: #ffffff;
+    transform: translateY(-2px);
   }
 
   .btn-main {
+    flex: 1;
+    min-width: 180px;
+    padding: 17px 36px;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s;
     background: #1e6fff;
     color: #ffffff;
     border: 2px solid #1e6fff;
@@ -182,17 +163,6 @@
     border-color: #0a4fd6;
     transform: translateY(-2px);
     box-shadow: 0 14px 34px rgba(30, 111, 255, 0.45);
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: #1e6fff;
-    border: 2px solid #1e6fff;
-  }
-  .btn-outline:hover {
-    background: #1e6fff;
-    color: #ffffff;
-    transform: translateY(-2px);
   }
 
   /* ===== SERVICE CARDS (2 x 2 grid) ===== */
@@ -262,15 +232,14 @@
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 800px) {
-    .nav-links { display: none; }
     .hero { padding: 60px 16px 40px; }
     .hero h1 { font-size: 34px; letter-spacing: -0.5px; }
     .hero p.sub { font-size: 15px; line-height: 1.65; }
     header { padding: 14px 16px; }
     .logo { font-size: 22px; }
-    .btn-login, .btn-register { padding: 8px 14px; font-size: 13px; }
-    .hero-buttons { flex-direction: column; align-items: center; }
-    .hero-buttons button { width: 100%; max-width: 320px; padding: 15px 20px; }
+    .header-btn { padding: 9px 18px; font-size: 13px; }
+    .hero-buttons { flex-direction: column; max-width: 320px; }
+    .btn-outline, .btn-main { width: 100%; padding: 15px 20px; }
     .services { gap: 14px; margin: 50px auto 70px; padding: 0 14px; }
     .card { padding: 22px 18px; border-radius: 14px; }
     .card .icon-circle { width: 40px; height: 40px; font-size: 19px; }
@@ -290,17 +259,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">ZAVORA<span>.</span></div>
-    <nav class="nav-links">
-      <a href="#">Buy Numbers</a>
-      <a href="#">Buy Accounts</a>
-      <a href="#">Booster</a>
-      <a href="#">Grow</a>
-      <a href="#">Buy eSIM</a>
-    </nav>
-    <div class="header-buttons">
-      <button class="btn-login">Login</button>
-      <button class="btn-register">Register</button>
-    </div>
+    <button class="header-btn">Create Account</button>
   </header>
 
   <!-- HERO -->
@@ -315,26 +274,26 @@
     </h1>
 
     <p class="sub">
-      Buy real mobile numbers from 180+ countries, verified accounts, social media boosting,
+      Buy virtual numbers from 180+ countries, verified accounts, social media boosting,
       and instant eSIM — all delivered fast, safely, and 24/7.
-      Whether you need a clean number for verification, a ready-to-use account,
+      Whether you need a clean virtual number for verification, a ready-to-use account,
       a boost for your social media, or instant data abroad — Zavora has everything
       you need in one simple, trusted place. No delays. No stress. Just results.
     </p>
 
     <div class="hero-buttons">
       <button class="btn-outline">Login</button>
-      <button class="btn-main">Register</button>
+      <button class="btn-main">Create Account</button>
     </div>
   </section>
 
-  <!-- SERVICE CARDS (1-2 top, 3-4 bottom) -->
+  <!-- SERVICE CARDS (2x2) -->
   <section class="services">
     <div class="card">
       <div class="icon-circle">📱</div>
       <div class="num">01</div>
       <h3>Buy Numbers</h3>
-      <p>180+ countries. Instant delivery, verified & clean numbers for any platform.</p>
+      <p>180+ countries. Instant delivery, verified & clean virtual numbers for any platform.</p>
     </div>
     <div class="card">
       <div class="icon-circle">👤</div>
